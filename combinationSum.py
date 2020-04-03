@@ -7,10 +7,11 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         result = []
+        candidates.sort()
         self.helper(candidates, target, result)
         return result
      
-    def helper(self, candidates, target, result, temp=[], prev=float('-inf')):
+    def helper(self, candidates, target, result, temp=[], index = 0):
 
         if target == 0:
             print(temp)
@@ -19,12 +20,10 @@ class Solution(object):
             return
         if target < 0:
             return
-        for n in candidates:
-            if n >= prev:
-                prev = n
-                temp.append(n)
-                self.helper(candidates, target - n, result, temp, prev)
-                temp.pop()
+        for i in range(index, len(candidates)):
+            temp.append(candidates[i])
+            self.helper(candidates, target - candidates[i], result, temp, i)
+            temp.pop()
 
             
 a = Solution()
