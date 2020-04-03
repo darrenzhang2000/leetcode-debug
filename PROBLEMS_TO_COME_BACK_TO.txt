@@ -1,0 +1,7 @@
+39. combination sum
+ONCE I KNOW DYNAMIC PROGRAMMING
+https://leetcode.com/problems/combination-sum/discuss/16506/8-line-Python-solution-dynamic-programming-beats-86.77
+
+
+973. K Closest Points to Origin
+Quick select solution
