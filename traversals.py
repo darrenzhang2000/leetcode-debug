@@ -35,6 +35,23 @@ three.right = seven
 preorderTraversal(one)
 
 #inorder
+def inorderTraversal(node):
+    if not node:
+        return
+    stack = []
+    while True:
+        if node:
+            stack.append(node)
+            node = node.left
+        else:
+            if len(stack) == 0:
+                break
+            node = stack.pop()
+            print(node)
+            node = node.right
+
+inorderTraversal(one)        
+
 
 #postorder
 
@@ -78,9 +95,9 @@ class Solution(object):
 
 
 
-one = treeNode(1)
-two = treeNode(2)
-three = treeNode(3)
+one = TreeNode(1)
+two = TreeNode(2)
+three = TreeNode(3)
 three.left = one
 three.right = two
 
