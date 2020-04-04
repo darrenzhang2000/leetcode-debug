@@ -1,14 +1,43 @@
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
 #preorder
+def preorderTraversal(node):
+    if not node:
+        return
+    stack = []
+    stack.append(node)
+    while len(stack) > 0:
+        x = stack.pop()
+        print(x.val)
+        if x.right:
+            stack.append(x.right)
+        if x.left:
+            stack.append(x.left)
+    return
+
+one = TreeNode(1)
+two = TreeNode(2)
+three = TreeNode(3)
+four = TreeNode(4)
+five = TreeNode(5)
+six = TreeNode(6)
+seven = TreeNode(7)
+one.left = two
+one.right = three
+two.left = four
+two.right = five
+three.left = six
+three.right = seven
+preorderTraversal(one)
 
 #inorder
 
 #postorder
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+
 
 class Solution(object):
 #     def postorderTraversal(self, root):
@@ -45,11 +74,6 @@ class Solution(object):
         result.reverse()
         return result
         
-class treeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
 
 
 
@@ -61,4 +85,4 @@ three.left = one
 three.right = two
 
 a = Solution()
-print(a.postorderTraversal(three))
+# print(a.postorderTraversal(three))
